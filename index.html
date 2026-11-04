@@ -81,7 +81,7 @@
         {
           "@type": "Question",
           "name": "How much does cabinet refinishing cost?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It depends on your kitchen — your piece count, the condition of your cabinets, and the upgrades you choose all change the work involved, so every Hillcrest project is quoted individually rather than from a flat rate. Build your selections in the instant quote calculator on this page and we will prepare your itemized quote and email it to you." }
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on your kitchen — your piece count, the condition of your cabinets, and the upgrades you choose all change the work involved, so every Hillcrest project is quoted individually rather than from a flat rate. Build your selections in the instant quote calculator on this page, add at least one photo of your kitchen, and we will email you a preliminary quote. Final pricing is set after an on-site visit, where we measure and inspect everything in person." }
         },
         {
           "@type": "Question",
@@ -101,7 +101,7 @@
         {
           "@type": "Question",
           "name": "Why don't you show a price in the calculator?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Because a real quote depends on your exact piece count, condition, and upgrades. The calculator captures everything we need, and your itemized quote is prepared and emailed to you — no inflated instant number that changes later." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Because a real quote depends on your exact piece count, condition, and upgrades. The calculator captures everything we need — including photos of your kitchen — and your preliminary quote is prepared and emailed to you, so you're not pushed to a scheduling page just to start over. Final pricing is set after an on-site visit, where we measure and inspect everything in person." }
         },
         {
           "@type": "Question",
@@ -268,6 +268,13 @@ section{padding:72px 0;scroll-margin-top:84px} section.tight{padding:48px 0}
 .field input,.field select,.field textarea{background:#fff;border:1px solid var(--line2);color:var(--navy);border-radius:10px;padding:12px 13px;font:inherit;font-size:.95rem;width:100%}
 .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--gold);outline-offset:0;border-color:transparent}
 .field .err{display:none;color:#b35454;font-size:.8rem}.field.invalid input,.field.invalid select{border-color:#b35454}.field.invalid .err{display:block}
+.photo-input{background:#fff;border:1.5px dashed rgba(27,35,64,.3);border-radius:12px;padding:14px}
+.photo-input input[type=file]{width:100%;font:inherit;font-size:.9rem;color:var(--muted)}
+.photo-list{margin:8px 0 0;padding:0;list-style:none;font-size:.84rem;color:var(--muted)}
+.photo-list li{padding:5px 0;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:10px}
+.photo-err{display:none;color:#b35454;font-size:.82rem;font-weight:700;margin:10px 0 0}
+.field.invalid .photo-input{border-color:#b35454}
+.field.invalid .photo-err{display:block}
 .calc-nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
 /* summary */
 .summary{position:sticky;top:92px;background:var(--navy);border:1px solid var(--navy);border-radius:22px;padding:22px;color:#e8eaf2}
@@ -465,7 +472,7 @@ footer a{color:var(--gold);text-decoration:none}
 
 <!-- CALCULATOR -->
 <section id="calculator"><div class="wrap">
-  <div class="sec-head"><div class="small-label">Instant Quote Calculator</div><h2>Build your kitchen cabinet refinishing quote — we'll email it to you.</h2><p>Count your pieces, pick every upgrade you want, and tell us where to send it. Your itemized quote is prepared from your exact selections — we don't flash a generic number on screen, because no two kitchens price the same. Every project is also protected by an area minimum based on your distance from Chaska, applied automatically from your city — your quote is never prepared below yours.</p></div>
+  <div class="sec-head"><div class="small-label">Instant Quote Calculator</div><h2>Build your preliminary quote — we'll email it to you.</h2><p>Count your pieces, pick every upgrade you want, add at least one photo of your kitchen, and tell us where to send it. Your preliminary quote is prepared from your selections and photos and emailed straight to you — final pricing is set after an on-site visit, where we measure and inspect everything in person. Every project is also protected by an area minimum based on your distance from Chaska, applied automatically from your city — your preliminary quote is never prepared below it.</p></div>
 
   <div class="calc-shell">
     <div>
@@ -482,13 +489,6 @@ footer a{color:var(--gold);text-decoration:none}
           <h3>Count your pieces</h3>
           <p class="hint">Open your cabinets and count. Don't worry about being perfect — we verify every count in person before final pricing.</p>
           <div class="counter-grid" id="counters"></div>
-          <div class="group-title">Kitchen size</div>
-          <div class="pill-row" data-single="kitchenSize">
-            <button type="button" class="pill" data-val="Small kitchen (under 20 pieces)">Small</button>
-            <button type="button" class="pill on" data-val="Medium kitchen (20–40 pieces)">Medium</button>
-            <button type="button" class="pill" data-val="Large kitchen (40–60 pieces)">Large</button>
-            <button type="button" class="pill" data-val="Extra-large / open plan (60+ pieces)">Extra-Large</button>
-          </div>
           <div class="calc-nav"><span></span><button type="button" class="btn btn-gold" data-next>Continue to Upgrades →</button></div>
         </div>
 
@@ -526,12 +526,6 @@ footer a{color:var(--gold);text-decoration:none}
             <button type="button" class="pill" data-val="MDF / painted grade">MDF</button>
             <button type="button" class="pill" data-val="Not sure">Not sure</button>
           </div>
-          <div class="group-title">Sheen</div>
-          <div class="pill-row" data-single="sheen">
-            <button type="button" class="pill" data-val="Matte">Matte</button>
-            <button type="button" class="pill on" data-val="Satin (most popular)">Satin — most popular</button>
-            <button type="button" class="pill" data-val="Semi-gloss">Semi-gloss</button>
-          </div>
           <div class="field" style="margin-top:20px"><label for="colorChoice">Color(s) you're considering</label><input id="colorChoice" type="text" placeholder="e.g. Pure White uppers, Naval island — or 'need help choosing'"></div>
           <div class="calc-nav"><button type="button" class="btn btn-outline" data-prev>← Back</button><button type="button" class="btn btn-gold" data-next>Get My Quote →</button></div>
         </div>
@@ -539,7 +533,7 @@ footer a{color:var(--gold);text-decoration:none}
         <!-- STEP 4 -->
         <div class="calc-step" data-step="4">
           <h3>Where should we email your quote?</h3>
-          <p class="hint">Same details we'd ask on a call. Fields marked <span style="color:var(--gold-dark)">*</span> are required so we can prepare and send your itemized quote.</p>
+          <p class="hint">Same details we'd ask on a call — plus at least one photo of your kitchen. Fields marked <span style="color:var(--gold-dark)">*</span> are required so we can prepare and email your preliminary quote.</p>
           <form id="quoteForm" novalidate>
             <div class="field-grid">
               <div class="field"><label for="fFirst">First name <i>*</i></label><input id="fFirst" required autocomplete="given-name"><span class="err">First name is required.</span></div>
@@ -569,6 +563,7 @@ footer a{color:var(--gold);text-decoration:none}
                   <option value="">Select one…</option>
                   <option>Google search</option><option>Facebook</option><option>Instagram</option><option>Referral from a friend or neighbor</option><option>Repeat Hillcrest customer</option><option>Saw a Hillcrest job in my neighborhood</option><option>Other</option>
                 </select><span class="err">Please tell us how you heard about us.</span></div>
+              <div class="field full"><label for="fPhotos">Photos of your kitchen <i>*</i></label><div class="photo-input"><input id="fPhotos" type="file" accept="image/*" multiple><p style="margin:8px 0 0;font-size:.82rem;color:var(--muted2)">At least one photo is required — your preliminary quote is prepared from your photos as well as your counts. Wide shots of the whole kitchen plus close-ups of any wear or damage help most. You can select more than one.</p><ul class="photo-list" id="photoList"></ul><p class="photo-err" id="photoErr">Please add at least one photo of your kitchen — your quote can't be prepared without one.</p></div></div>
               <div class="field full"><label for="fNotes">Anything else we should know?</label><textarea id="fNotes" rows="3" placeholder="Layout notes, damage or repairs, deadline events, inspiration links…"></textarea></div>
             </div>
             <div class="calc-nav"><button type="button" class="btn btn-outline" data-prev>← Back</button><button type="submit" class="btn btn-gold" style="font-size:1rem;padding:16px 26px">Email My Quote →</button></div>
@@ -578,12 +573,12 @@ footer a{color:var(--gold);text-decoration:none}
       </div>
 
       <div class="success" id="successBox">
-        <div class="small-label">Request Ready</div>
-        <h3 id="successTitle">Your quote request is built.</h3>
-        <p id="successText">Here's exactly what will be sent to our team. Tap below to open it in your email app and send it — your itemized quote will be prepared from these selections and emailed back to you.</p>
+        <div class="small-label">Quote Request</div>
+        <h3 id="successTitle">Sending your request…</h3>
+        <p id="successText">One moment — your request is on its way to the Hillcrest team, and your preliminary quote is being prepared from your selections and your photos.</p>
         <pre id="successSummary"></pre>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
-          <a class="btn btn-gold" id="mailtoBtn" href="#">Open in Email &amp; Send →</a>
+          <a class="btn btn-gold" id="mailtoBtn" href="#" style="display:none">Open in Email &amp; Send →</a>
           <button type="button" class="btn btn-outline" id="copyBtn">Copy My Summary</button>
           <button type="button" class="btn btn-navy" id="restartBtn">Start Over</button>
         </div>
@@ -597,9 +592,8 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="sum-row"><span>Total pieces</span><b id="sumPieces">0</b></div>
       <div class="sum-row"><span>Upgrades selected</span><b id="sumUpgrades">0</b></div>
       <div class="sum-row"><span>Project type</span><b id="sumType" style="text-align:right;font-size:.85rem">Full color change</b></div>
-      <div class="sum-row"><span>Sheen</span><b id="sumSheen">Satin</b></div>
       <ul id="sumList"><li style="border:0;color:var(--on-navy-dim)">Your upgrades will appear here as you tap them.</li></ul>
-      <div class="no-price"><b style="color:var(--gold)">Your minimum is protected.</b><br>Every project carries an area minimum based on your distance from Chaska, applied automatically from your city in Step 4 — your itemized quote is never prepared below it. The full quote itself is prepared by a person, not a formula, and emailed to you after you complete Step 4.</div>
+      <div class="no-price"><b style="color:var(--gold)">Your preliminary quote comes by email.</b><br>When you submit, a preliminary quote is prepared from your counts, your selections, and your photos, and emailed straight to you — no scheduling detour, no filling everything out twice. It comes with a simple disclaimer: final pricing is set after an on-site visit, where we measure and inspect everything in person. Every project also carries an area minimum based on your distance from Chaska, applied automatically from your city in Step 4 — your preliminary quote is never prepared below it.</div>
       <a class="btn btn-gold" href="#calculator" id="summaryCta" style="width:100%;margin-top:16px">Continue Building →</a>
     </aside>
   </div>
@@ -611,11 +605,11 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="faq" id="faqList">
     <div class="faq-item"><button class="faq-q" type="button">Do you take my cabinet doors and drawers to a shop?<span>+</span></button><div class="faq-a">No — never. Everything we do is done on site, right in your home: doors, drawers, and frames are prepped, sprayed, and finished where they live. Nothing is taken off site at any point in the project.</div></div>
     <div class="faq-item"><button class="faq-q" type="button">How long does kitchen cabinet refinishing take?<span>+</span></button><div class="faq-a">Most kitchens run 5–7 working days from start to finish. Because everything is done on site in your home — doors, drawers, and frames — your kitchen stays usable for much of the project.</div></div>
-    <div class="faq-item"><button class="faq-q" type="button">How much does cabinet refinishing cost?<span>+</span></button><div class="faq-a">It depends on your kitchen — your piece count, the condition of your cabinets, and the upgrades you choose all change the work involved, so every Hillcrest project is quoted individually rather than from a flat rate. Build your selections in the instant quote calculator above and we'll prepare your itemized quote and email it to you.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button">How much does cabinet refinishing cost?<span>+</span></button><div class="faq-a">It depends on your kitchen — your piece count, the condition of your cabinets, and the upgrades you choose all change the work involved, so every Hillcrest project is quoted individually rather than from a flat rate. Build your selections in the instant quote calculator above, add at least one photo of your kitchen, and we'll email you a preliminary quote. Final pricing is set after an on-site visit, where we measure and inspect everything in person.</div></div>
     <div class="faq-item"><button class="faq-q" type="button">Is cabinet enameling the same as cabinet painting?<span>+</span></button><div class="faq-a">Not the way we do it. We exclusively use Sherwin-Williams Gallery Series enamel, sprayed on site after degreasing, sanding, and priming — for a smooth, hard, factory-style finish that holds up to daily kitchen use.</div></div>
     <div class="faq-item"><button class="faq-q" type="button">Can I see the cabinet finish before I commit?<span>+</span></button><div class="faq-a">Yes — request a sample door viewing above and we'll bring real enameled sample doors to your home, so you can see the process and feel the finish in your own light before you decide anything. The sample doors are finished examples in the colors we currently have on hand, so a specific color can't be requested — your own color is chosen separately, and we can enamel virtually any color you want.</div></div>
     <div class="faq-item"><button class="faq-q" type="button">Can you refinish oak cabinets to a smooth painted finish?<span>+</span></button><div class="faq-a">Yes. Add "grain filling" in the calculator and we'll include smoothing the visible oak grain as a line item on your quote.</div></div>
-    <div class="faq-item"><button class="faq-q" type="button">Why don't you show a price in the calculator?<span>+</span></button><div class="faq-a">Because a real quote depends on your exact piece count, condition, and upgrades. The calculator captures everything we need, and your itemized quote is prepared and emailed to you — no inflated "instant" number that changes later.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button">Why don't you show a price in the calculator?<span>+</span></button><div class="faq-a">Because a real quote depends on your exact piece count, condition, and upgrades. The calculator captures everything we need — including photos of your kitchen — and your preliminary quote is prepared and emailed to you, so you're not pushed to a scheduling page just to start over. Final pricing is set after an on-site visit, where we measure and inspect everything in person.</div></div>
     <div class="faq-item"><button class="faq-q" type="button">Do you offer cabinet refinishing near me?<span>+</span></button><div class="faq-a">Based in Chaska, we serve Chanhassen, Victoria, Waconia, Shakopee, and Eden Prairie, plus Carver, Cologne, Norwood Young America, Watertown, Glencoe, Medina, Wayzata, Excelsior, Minnetonka, Hopkins, Edina, Eagan, and Delano — across Carver County and the southwest Twin Cities metro. Choose your city in the calculator and we'll confirm coverage with your quote.</div></div>
   </div>
   <div style="text-align:center;margin-top:36px">
@@ -743,9 +737,7 @@ var GROUPS=[
    ['new-glides','Replace drawer glides (new)','New standard glides where slides are worn or broken']
  ]},
  {title:'Hardware — Knobs & Pulls',items:[
-   ['new-knobs','New knobs — supply & install','We supply and install new knobs throughout'],
-   ['new-pulls','New pulls / handles — supply & install','We supply and install new pulls or bar handles'],
-   ['install-hardware','Install hardware I supply','You pick it, we professionally install it'],
+   ['install-hardware','Install hardware I supply','You pick it, we professionally install it — we install hardware, we don\'t sell it'],
    ['knob-to-pull','Change knobs → pulls','Drill new holes to convert knobs to pulls'],
    ['fill-holes','Fill old hardware holes','Old holes filled and finished invisible before enameling']
  ]},
@@ -759,8 +751,7 @@ var GROUPS=[
  ]},
  {title:'Surface & Finish Upgrades',items:[
    ['grain-fill','Grain filling — smooth oak','Fill the oak grain for a smooth, modern painted finish'],
-   ['strip-finish','Strip failing old finish','Remove peeling or failing paint before refinishing'],
-   ['stain-block','Stain-blocking treatment','Extra sealing for tannin bleed on oak and cherry']
+   ['strip-finish','Strip failing old finish','Remove peeling or failing paint before refinishing']
  ]}
 ];
 
@@ -801,7 +792,7 @@ GROUPS.forEach(function(g){
 });
 
 /* single-choice pill rows */
-var singles={kitchenSize:'Medium kitchen (20–40 pieces)',projectType:'Full color change',currentFinish:'Stained wood',woodType:'Maple / smooth wood',sheen:'Satin (most popular)'};
+var singles={projectType:'Full color change',currentFinish:'Stained wood',woodType:'Maple / smooth wood'};
 $$('.pill-row').forEach(function(row){
   var key=row.getAttribute('data-single'); if(!key)return;
   $$('.pill',row).forEach(function(p){
@@ -872,7 +863,7 @@ function selectedList(){return Object.keys(selected).map(function(k){return sele
 function updateSummary(){
   $('#sumPieces').textContent=totalPieces();
   var list=selectedList(); $('#sumUpgrades').textContent=list.length;
-  $('#sumType').textContent=singles.projectType; $('#sumSheen').textContent=singles.sheen.replace(' (most popular)','');
+  $('#sumType').textContent=singles.projectType;
   var ul=$('#sumList');
   if(!list.length){ul.innerHTML='<li style="border:0;color:var(--on-navy-dim)">Your upgrades will appear here as you tap them.</li>';return}
   ul.innerHTML=list.map(function(x){return '<li>'+x+'</li>'}).join('');
@@ -901,6 +892,69 @@ function copyText(txt){
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){toast('Summary copied')},function(){toast('Copy not available — long-press the summary')})}else toast('Copy not available — long-press the summary');
 }
 
+function escapeHtml(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+/* ---------- Photo uploads (quote form) ---------- */
+function selectedPhotoFiles(){var inp=$('#fPhotos'); if(!inp||!inp.files)return []; return Array.prototype.slice.call(inp.files)}
+function renderPhotoList(){
+  var ul=$('#photoList'); if(!ul)return;
+  var files=selectedPhotoFiles();
+  if(!files.length){ul.innerHTML=''; return}
+  ul.innerHTML=files.map(function(f){return '<li><span>'+escapeHtml(f.name)+'</span><span>'+(f.size?Math.max(1,Math.round(f.size/1024))+' KB':'')+'</span></li>'}).join('');
+}
+var fPhotosEl=$('#fPhotos');
+if(fPhotosEl)fPhotosEl.addEventListener('change',function(){renderPhotoList(); var pf=fPhotosEl.closest('.field'); if(pf&&selectedPhotoFiles().length)pf.classList.remove('invalid')});
+
+/* ---------- Preliminary quote engine ---------- */
+/* "Get my quote" now produces an actual PRELIMINARY QUOTE the moment the
+   visitor submits: computed client-side from their own piece counts and
+   selections at Carlos's standing cabinet rates, floored at the protected
+   area minimum for their city, and carried in the webhook payload
+   (preliminary_quote_total, preliminary_quote_total_formatted,
+   preliminary_quote_lines, preliminary_quote_disclaimer) so the Zap can
+   email it straight to the client. The amount is NEVER displayed on this
+   site — per Carlos's rule prices stay off the pages; the on-screen
+   confirmation only says the preliminary quote is being emailed.
+   Pieces whose size can't be judged from a count alone (doors, drawer
+   fronts) are priced at the standard rate; the on-site visit confirms
+   sizes and condition before anything is final. Selections with no rate
+   here are listed in the breakdown as "priced at the on-site visit". */
+var PIECE_RATES={'doors':200,'drawers':125,'panels':150,'lazy':300,'glass':275};
+var OPTION_RATES={'inside-cabinets':175,'pantry-door':400,'window':300,'island-two-tone':800,'island-legs':250};
+var PRELIM_DISCLAIMER='This is a preliminary quote based on the details and photos you provided. Some items can only be priced after an on-site visit, where we measure and inspect everything in person and determine the actual cost. Final pricing is set after that visit and may change if the scope differs from what was submitted.';
+function buildPreliminaryQuote(area){
+  var lines=[]; var total=0;
+  lines.push('PRELIMINARY QUOTE — CABINET REFINISHING');
+  lines.push('');
+  COUNTERS.forEach(function(c){
+    if(c.val<=0)return;
+    var rate=PIECE_RATES[c.id];
+    if(rate){
+      var amt=rate*c.val; total+=amt;
+      lines.push('• '+c.label+' × '+c.val+' — '+money(amt));
+    }else{
+      lines.push('• '+c.label+' × '+c.val+' — priced at the on-site visit');
+    }
+  });
+  if(selectedList().length){
+    lines.push('');
+    lines.push('UPGRADES & ADD-ONS');
+    Object.keys(selected).forEach(function(id){
+      var rate=OPTION_RATES[id];
+      if(rate){total+=rate; lines.push('• '+selected[id]+' — '+money(rate))}
+      else lines.push('• '+selected[id]+' — priced at the on-site visit');
+    });
+  }
+  lines.push('');
+  lines.push('Preliminary subtotal: '+money(total));
+  var floored=total<area.min;
+  if(floored){lines.push('Preliminary quote (area minimum applied): '+money(area.min))}
+  else{lines.push('Preliminary quote: '+money(total))}
+  lines.push('');
+  lines.push(PRELIM_DISCLAIMER);
+  return {total:floored?area.min:total,text:lines.join('\n')};
+}
+
 /* ---------- Instant delivery: Hillcrest email + Zapier ---------- */
 /* This site is part of Hillcrest — it runs on Hillcrest's EXISTING email
    and systems. No new Google Workspace, no new accounts.
@@ -913,15 +967,35 @@ function copyText(txt){
       account: send the payload's "summary" text to the Hillcrest inbox
       (subject line is in the payload), so every quote and appointment
       request lands in Hillcrest email instantly.
-   3. Zap step — CompanyCam: create the client/project from the payload
-      fields (name, email, phone, street, city, zip).
-   4. Zap step — DripJobs: create the contact/lead from the same payload
+   3. Zap step — Gmail "Send Email" to the CLIENT (quote requests only):
+      send preliminary_quote_lines to the client's own email address, so
+      "Get my quote" actually emails them their preliminary quote with the
+      on-site-visit disclaimer — instead of a scheduling link that makes
+      them fill everything out again.
+   4. Zap step — CompanyCam: create the client/project from the payload
+      fields (name, email, phone, street, city, zip) and attach the
+      submitted kitchen photos (photo_1, photo_2, … file fields).
+   5. Zap step — DripJobs: create the contact/lead from the same payload
       fields, so the client exists in DripJobs from the same submission.
-   Until the URL is pasted in, both forms fall back to the visitor's own
-   email app (the flow this page has always had) — nothing breaks. */
+   The webhook URL is live below. If a POST ever fails, the quote form
+   reveals a mailto fallback button for that submission only — the
+   email-app route never appears on the normal path. */
 var ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/22197849/49fnvfz/';
-function sendToHillcrest(payload){
+function sendToHillcrest(payload, files){
   if(!ZAPIER_WEBHOOK_URL) return Promise.resolve(false);
+  if(files&&files.length){
+    var fd=new FormData();
+    Object.keys(payload).forEach(function(k){var v=payload[k]; fd.append(k,(v!==null&&typeof v==='object')?JSON.stringify(v):String(v==null?'':v))});
+    files.forEach(function(f,i){fd.append('photos',f,f.name); fd.append('photo_'+(i+1),f,f.name)});
+    fd.append('photo_count',String(files.length));
+    return fetch(ZAPIER_WEBHOOK_URL,{method:'POST',body:fd})
+      .then(function(r){return !!r.ok})
+      .catch(function(){
+        return fetch(ZAPIER_WEBHOOK_URL,{method:'POST',mode:'no-cors',body:fd})
+          .then(function(){return true})
+          .catch(function(){return false});
+      });
+  }
   var body=JSON.stringify(payload);
   return fetch(ZAPIER_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:body})
     .then(function(r){return !!r.ok})
@@ -945,8 +1019,20 @@ $('#quoteForm').addEventListener('submit',function(e){
   ok=fieldInvalid('fZip',!$('#fZip').value.trim())&&ok;
   ok=fieldInvalid('fTimeline',!$('#fTimeline').value)&&ok;
   ok=fieldInvalid('fSource',!$('#fSource').value)&&ok;
-  if(!ok){toast('Please complete the required fields marked *');var bad=$('.field.invalid input,.field.invalid select');if(bad)bad.focus();return}
+  /* At least ONE kitchen photo is required — the preliminary quote is
+     prepared from the photos as well as the counts. */
+  var photoFiles=selectedPhotoFiles();
+  var photoNames=photoFiles.map(function(f){return f.name});
+  var photoField=$('#fPhotos').closest('.field');
+  if(photoField)photoField.classList.toggle('invalid',!photoFiles.length);
+  if(!photoFiles.length)ok=false;
+  if(!ok){
+    if(!photoFiles.length){toast('Please add at least one photo of your kitchen'); var pf=$('#fPhotos'); if(pf){pf.scrollIntoView({behavior:'smooth',block:'center'}); pf.focus()} return}
+    toast('Please complete the required fields marked *');var bad=$('.field.invalid input,.field.invalid select');if(bad)bad.focus();return
+  }
   var name=$('#fFirst').value.trim()+' '+$('#fLast').value.trim();
+  var area=areaFor($('#fCity').value);
+  var prelim=buildPreliminaryQuote(area);
   var lines=[];
   lines.push('CABINET REFINISHING — QUOTE REQUEST');
   lines.push('by The Hillcrest Company');
@@ -959,7 +1045,6 @@ $('#quoteForm').addEventListener('submit',function(e){
   lines.push('Preferred contact: '+$('#fContact').value+' · Best time: '+$('#fBestTime').value);
   lines.push('Heard about us: '+$('#fSource').value);
   lines.push('Requested completion: '+$('#fTimeline').value);
-  var area=areaFor($('#fCity').value);
   /* INTERNAL ONLY: the protected-minimum block goes into the summary that
      is sent to Hillcrest's inbox (payload + email fallback). It is never
      part of the summary displayed to the visitor on screen. */
@@ -970,20 +1055,30 @@ $('#quoteForm').addEventListener('submit',function(e){
   minBlock.push('Protected project minimum for this area: '+money(area.min)+' — quote is never prepared below this minimum.');
   var rest=[];
   rest.push('');
-  rest.push('KITCHEN — '+singles.kitchenSize);
+  rest.push('KITCHEN');
   COUNTERS.forEach(function(c){if(c.val>0)rest.push('• '+c.label+': '+c.val)});
   rest.push('Total pieces: '+totalPieces());
   rest.push('');
   rest.push('FINISH');
   rest.push('Project type: '+singles.projectType);
   rest.push('Current cabinets: '+singles.currentFinish+' · Wood/grain: '+singles.woodType);
-  rest.push('Sheen: '+singles.sheen);
   if($('#colorChoice').value.trim())rest.push('Colors considered: '+$('#colorChoice').value.trim());
   rest.push('');
   rest.push('UPGRADES & ADD-ONS ('+selectedList().length+')');
   if(selectedList().length)selectedList().forEach(function(x){rest.push('• '+x)});else rest.push('• None selected — base enameling only');
+  rest.push('');
+  rest.push('PHOTOS');
+  rest.push('Photos attached: '+photoNames.length+' — '+photoNames.join(', '));
   if($('#fNotes').value.trim()){rest.push('');rest.push('NOTES');rest.push($('#fNotes').value.trim())}
-  var summary=lines.concat(minBlock,rest).join('\n');
+  /* INTERNAL ONLY: the preliminary-quote block rides with the internal
+     summary and the payload so the Zap can email the quote to the client.
+     It is never part of the summary displayed to the visitor on screen —
+     no prices anywhere on the site itself. */
+  var prelimBlock=[];
+  prelimBlock.push('');
+  prelimBlock.push('———');
+  prelimBlock.push(prelim.text);
+  var summary=lines.concat(minBlock,rest,prelimBlock).join('\n');
   var displaySummary=lines.concat(rest).join('\n');
   var counts={}; COUNTERS.forEach(function(c){counts[c.id]=c.val});
   var payload={
@@ -999,27 +1094,41 @@ $('#quoteForm').addEventListener('submit',function(e){
     service_area_city:area.city, service_area_listed:area.listed,
     area_tier:area.tier, area_tier_label:area.tierLabel,
     project_minimum:area.min, project_minimum_formatted:money(area.min),
-    kitchen_size:singles.kitchenSize, piece_counts:counts, total_pieces:totalPieces(),
+    piece_counts:counts, total_pieces:totalPieces(),
     project_type:singles.projectType, current_finish:singles.currentFinish, wood_type:singles.woodType,
-    sheen:singles.sheen, colors_considered:$('#colorChoice').value.trim(),
+    colors_considered:$('#colorChoice').value.trim(),
     upgrades:selectedList(), notes:$('#fNotes').value.trim(),
+    photo_count:photoNames.length, photo_names:photoNames, photo_file_names:photoNames.join(', '), has_photos:photoNames.length>0,
+    preliminary_quote_total:prelim.total,
+    preliminary_quote_total_formatted:money(prelim.total),
+    preliminary_quote_lines:prelim.text,
+    preliminary_quote_disclaimer:PRELIM_DISCLAIMER,
     summary:summary
   };
-  $('#successTitle').textContent='Thank you, '+$('#fFirst').value.trim()+' — your request is built.';
+  /* PRIMARY PATH: the full submission POSTs straight to the Zapier webhook
+     the moment the visitor submits — payload fields, preliminary quote,
+     and photos as multipart file fields. The panel first shows a plain
+     "sending" state with NO email-app button. The mailto fallback is
+     revealed ONLY if that POST itself fails. */
+  $('#successTitle').textContent='Sending your request…';
+  $('#successText').textContent='One moment — your request is on its way to the Hillcrest team, and your preliminary quote is being prepared from your selections and your photos.';
   $('#successSummary').textContent=displaySummary;
   var mail='mailto:?subject='+encodeURIComponent('Cabinet Refinishing Quote Request — '+name)+'&body='+encodeURIComponent(summary);
   $('#mailtoBtn').setAttribute('href',mail);
-  $('#mailtoBtn').style.display='';
+  $('#mailtoBtn').style.display='none';
   $('#calcCard').style.display='none';
   var sb=$('#successBox'); sb.classList.add('show'); sb.scrollIntoView({behavior:'smooth',block:'center'});
-  sendToHillcrest(payload).then(function(sent){
+  sendToHillcrest(payload, photoFiles).then(function(sent){
     if(sent){
       $('#successTitle').textContent='Thank you, '+$('#fFirst').value.trim()+' — your request is on its way.';
-      $('#successText').textContent="Your request was sent straight to the Hillcrest team the moment you hit submit. We'll prepare your itemized quote from these selections and email it back to you.";
+      $('#successText').textContent="Your request was sent straight to the Hillcrest team, and your preliminary quote is being emailed to "+$('#fEmail').value.trim()+" — prepared from your selections and your photos, with no scheduling detour and nothing to fill out again. One thing to know: some items can only be priced after an on-site visit, where we measure and inspect everything in person and determine the actual cost — final pricing is set after that visit.";
       $('#mailtoBtn').style.display='none';
-      toast('Quote request sent to the Hillcrest team');
+      toast('Request sent — your preliminary quote is on its way to your email');
     }else{
-      toast('Quote request ready — open it in email to send');
+      $('#successTitle').textContent='Thank you, '+$('#fFirst').value.trim()+' — your request is built.';
+      $('#successText').textContent="We couldn't send your request automatically, so here's the one backup step: tap below to open it in your email app and send it to our team. Your preliminary quote will be prepared from these selections and emailed back to you — final pricing is set after an on-site visit, where we measure and inspect everything in person.";
+      $('#mailtoBtn').style.display='';
+      toast('Automatic send didn\'t go through — use the email button below');
     }
   });
 });
